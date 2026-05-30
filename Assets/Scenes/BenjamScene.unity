@@ -6590,7 +6590,7 @@ MonoBehaviour:
   gravity: -9.81
   cameraTransform: {fileID: 2092061859}
   mouseSensitivity: 25
-  grabber: {fileID: 0}
+  grabber: {fileID: 2092061861}
 --- !u!143 &1386371371
 CharacterController:
   m_ObjectHideFlags: 0
@@ -7346,6 +7346,22 @@ PrefabInstance:
     - target: {fileID: 5771901151131407008, guid: 62f29e94ae6330f4c96547c8e89f362a, type: 3}
       propertyPath: m_VersionIndex
       value: 717
+      objectReference: {fileID: 0}
+    - target: {fileID: 5832819615920828598, guid: 62f29e94ae6330f4c96547c8e89f362a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 30.000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5832819615920828598, guid: 62f29e94ae6330f4c96547c8e89f362a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 30.000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5832819615920828598, guid: 62f29e94ae6330f4c96547c8e89f362a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 30.000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5832819615920828598, guid: 62f29e94ae6330f4c96547c8e89f362a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.031969845
       objectReference: {fileID: 0}
     - target: {fileID: 5835401630529768148, guid: 62f29e94ae6330f4c96547c8e89f362a, type: 3}
       propertyPath: m_Mesh
@@ -8905,7 +8921,7 @@ Transform:
   m_GameObject: {fileID: 1998039683}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.13000011, y: 0.90000004, z: 0.460001}
+  m_LocalPosition: {x: 0.13000011, y: 0.90000004, z: 0.960001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9495,7 +9511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectGrabber
   grabRange: 5
-  holdDistance: 2
+  holdDistance: 4
   rotateSpeed: 200
   smoothSpeed: 10
   paintModeKey: 20

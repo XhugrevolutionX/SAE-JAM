@@ -6,13 +6,11 @@ public class ObjectGrabber : MonoBehaviour
     [Header("Settings")]
     public float grabRange    = 5f;
     public float holdDistance = 2f;
-    public float rotateSpeed  = 200f;
+    public float rotateSpeed = 25f;
     public float smoothSpeed  = 10f;
 
-    [Header("Keys")]
-    public Key paintModeKey = Key.F; // hold F to enter paint mode
+    [SerializeField] private Camera _cam;
 
-    private Camera          _cam;
     private PaintableObject _held;
     private Transform       _heldTransform;
 
@@ -23,29 +21,24 @@ public class ObjectGrabber : MonoBehaviour
 
     private bool _paintMode = false;
 
+    private bool _isRotating;
+    private Vector2 _pointerDelta;
+
     public bool IsHolding   => _held != null;
     public bool IsPainting  => _paintMode;
 
-    void Awake() => _cam = GetComponent<Camera>();
-
     void Update()
     {
-        HandleGrab();
-
         if (_held != null)
         {
-            HandlePaintMode();
             HandleRotation();
             HoldObject();
         }
     }
 
-    // ── Grab / Drop ───────────────────────────────────────────────────────
 
-    void HandleGrab()
+    void TryGrabOrDrop()
     {
-        if (!Keyboard.current.eKey.wasPressedThisFrame) return;
-
         if (_held != null) { Drop(); return; }
 
         Ray ray = _cam.ScreenPointToRay(new Vector2(Screen.width / 2f, Screen.height / 2f));
@@ -69,10 +62,9 @@ public class ObjectGrabber : MonoBehaviour
         var rb = _heldTransform.GetComponent<Rigidbody>();
         if (rb != null) rb.isKinematic = true;
 
-        // Start in hold mode — camera free, cursor locked
         ExitPaintMode();
 
-        Debug.Log($"Grabbed {obj.name} — press {paintModeKey} to enter paint mode");
+        Debug.Log($"Grabbed {obj.name} — appuyez sur la touche Paint Mode pour peindre");
     }
 
     void Drop()
@@ -92,16 +84,13 @@ public class ObjectGrabber : MonoBehaviour
         Debug.Log("Dropped object");
     }
 
-    // ── Paint Mode ────────────────────────────────────────────────────────
 
-    void HandlePaintMode()
+    void TogglePaintMode()
     {
-        // Toggle paint mode with the paint key
-        if (Keyboard.current[paintModeKey].wasPressedThisFrame)
-        {
-            if (_paintMode) ExitPaintMode();
-            else            EnterPaintMode();
-        }
+        if (_held == null) return;
+
+        if (_paintMode) ExitPaintMode();
+        else            EnterPaintMode();
     }
 
     void EnterPaintMode()
@@ -120,29 +109,45 @@ public class ObjectGrabber : MonoBehaviour
         Debug.Log("Paint mode OFF — camera free");
     }
 
-    // ── Rotation ──────────────────────────────────────────────────────────
 
     void HandleRotation()
     {
-        // Rotation only works in paint mode with right click
-        if (!_paintMode) return;
-        if (!Mouse.current.rightButton.isPressed) return;
+        if (!_paintMode || !_isRotating) return;
 
-        Vector2 delta     = Mouse.current.delta.ReadValue();
-        float   dt        = Time.deltaTime;
+        float dt = Time.deltaTime;
         Vector3 upAxis    = Vector3.up;
         Vector3 rightAxis = _cam.transform.right;
 
-        _holdRotation = Quaternion.AngleAxis(-delta.x * rotateSpeed * dt, upAxis)    * _holdRotation;
-        _holdRotation = Quaternion.AngleAxis( delta.y * rotateSpeed * dt, rightAxis) * _holdRotation;
+        _holdRotation = Quaternion.AngleAxis(-_pointerDelta.x * rotateSpeed * dt, upAxis)    * _holdRotation;
+        _holdRotation = Quaternion.AngleAxis( _pointerDelta.y * rotateSpeed * dt, rightAxis) * _holdRotation;
     }
 
-    // ── Hold Position ─────────────────────────────────────────────────────
 
     void HoldObject()
     {
         Vector3 targetPos    = _cam.transform.position + _cam.transform.forward * holdDistance;
         _heldTransform.position = Vector3.Lerp(_heldTransform.position, targetPos, Time.deltaTime * smoothSpeed);
         _heldTransform.rotation = Quaternion.Slerp(_heldTransform.rotation, _holdRotation, Time.deltaTime * smoothSpeed);
+    }
+
+
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        if (context.performed) TryGrabOrDrop();
+    }
+
+    public void OnTogglePaintMode(InputAction.CallbackContext context)
+    {
+        if (context.performed) TogglePaintMode();
+    }
+
+    public void OnRotate(InputAction.CallbackContext context)
+    {
+        _isRotating = context.ReadValueAsButton();
+    }
+
+    public void OnPointerDelta(InputAction.CallbackContext context)
+    {
+        _pointerDelta = context.ReadValue<Vector2>();
     }
 }

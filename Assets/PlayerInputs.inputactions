@@ -35,8 +35,53 @@
                 },
                 {
                     "name": "Scroll",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "e14b621a-64d8-496d-beb9-af08c288cfe0",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Rotate",
+                    "type": "Button",
+                    "id": "7b8b7c46-b3e9-429c-a1fa-239e22f56f69",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "OnInteract",
+                    "type": "Button",
+                    "id": "b17762f7-70ac-4772-96ff-0cc63250ed00",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TogglePaintMode",
+                    "type": "Button",
+                    "id": "6e361c0b-5267-468f-b02e-17cfe5d51056",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PointerDelta",
+                    "type": "Value",
+                    "id": "851dcc91-2855-4550-b5e5-1399ed35cb89",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "OnPointerMove",
+                    "type": "Value",
+                    "id": "63fd436e-10f1-4907-8c76-b73c0dc46e28",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -219,6 +264,61 @@
                     "action": "Scroll",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "315484c6-745b-4725-bdfc-aa78e3d87534",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e952c16b-d78e-4fd3-b82f-3b5b942a76a4",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OnInteract",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "03d2b9b1-4de9-4e4d-acc6-f7e544e15667",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TogglePaintMode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3297e268-077a-4679-b7f3-5846916fd8d0",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PointerDelta",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "82c54859-0a07-417e-bcf5-0490f0447825",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OnPointerMove",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
