@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     public Transform cameraTransform;
     public float mouseSensitivity = 20f;
 
+    [Header("References")]
+    public ObjectGrabber grabber;
+    
     private CharacterController controller;
     private Vector2 moveInput;
     private Vector2 lookInput;
@@ -51,6 +54,9 @@ public class PlayerController : MonoBehaviour
 
     private void HandleRotation()
     {
+        if (grabber != null && grabber.IsHolding && Mouse.current.rightButton.isPressed)
+            return;
+        
         float mouseX = lookInput.x * mouseSensitivity * Time.deltaTime;
         float mouseY = lookInput.y * mouseSensitivity * Time.deltaTime;
 

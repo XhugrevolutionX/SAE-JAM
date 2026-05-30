@@ -23,7 +23,9 @@ public class Painter : MonoBehaviour
     {
         HandleColorSwitch();
 
-        if (Mouse.current.leftButton.isPressed && Time.time >= _nextPaintTime)
+        bool rotating = Mouse.current.rightButton.isPressed;
+        
+        if (!rotating && Mouse.current.leftButton.isPressed && Time.time >= _nextPaintTime)
         {
             TryPaint();
             _nextPaintTime = Time.time + paintRate;
