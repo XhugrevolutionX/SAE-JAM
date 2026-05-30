@@ -300,6 +300,7 @@ public class PaintableObject : MonoBehaviour
         Graphics.Blit(_paintRT, _tempRT, _brushMaterial);
         Graphics.Blit(_tempRT,  _paintRT);
         _isDirty = true;
+        
     }
 
     // ── Coverage ──────────────────────────────────────────────────────────

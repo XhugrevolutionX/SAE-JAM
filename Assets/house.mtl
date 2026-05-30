@@ -1,0 +1,5 @@
+newmtl Canvas
+map_Kd Canvas.renderTexture
+Kd 1 1 1
+d 1
+

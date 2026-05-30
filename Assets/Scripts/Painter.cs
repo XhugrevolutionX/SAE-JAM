@@ -119,6 +119,7 @@ public class Painter : MonoBehaviour
         PaintableObject paintable = hit.collider.GetComponent<PaintableObject>();
         if (paintable == null) return;
 
+        Debug.Log("Hit UVs: " + hit.textureCoord);
         paintable.Paint(hit.textureCoord, CurrentColor, brushSize, hardness);
     }
     
