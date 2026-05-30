@@ -11,7 +11,6 @@ public class Painter : MonoBehaviour
     public float range     = 10f;
     public float paintRate = 0.05f;
 
-    
     private int   _colorIndex    = 0;
     private float _nextPaintTime;
     [SerializeField] private Camera _cam;
@@ -20,9 +19,9 @@ public class Painter : MonoBehaviour
     [SerializeField] private Renderer _gunRenderer;
     [SerializeField] private ParticleSystem _paintParticles;
     [SerializeField] private ParticleSystem _auraParticles;
-    
-    private bool _isPainting;
-    private bool _isRotating;
+
+    private bool    _isPainting;
+    private bool    _isRotating;
     private Vector2 _pointerPosition;
 
     public Color CurrentColor => palette.colors[_colorIndex];
@@ -31,10 +30,11 @@ public class Painter : MonoBehaviour
     {
         UpdateGunVisual();
     }
+
     void Update()
     {
         AimTowardsCrosshair();
-        
+
         bool holdingObject = grabber != null && grabber.IsHolding;
         bool inPaintMode   = grabber != null && grabber.IsPainting;
         bool canPaint      = !holdingObject || inPaintMode;
@@ -65,13 +65,9 @@ public class Painter : MonoBehaviour
         Vector3 targetPoint;
 
         if (Physics.Raycast(ray, out RaycastHit hit, range))
-        {
             targetPoint = hit.point;
-        }
         else
-        {
             targetPoint = ray.GetPoint(range);
-        }
 
         if (_gunRenderer != null)
         {
@@ -85,26 +81,25 @@ public class Painter : MonoBehaviour
             _paintParticles.transform.rotation = Quaternion.Slerp(_paintParticles.transform.rotation, targetRotation, Time.deltaTime * 15f);
         }
     }
+
     void UpdateGunVisual()
     {
         if (_gunRenderer != null && palette != null && palette.colors.Length > 0)
-        {
             _gunRenderer.material.color = CurrentColor;
-        }
 
         if (_paintParticles != null)
         {
             var main = _paintParticles.main;
             main.startColor = CurrentColor;
         }
-        
+
         if (_auraParticles != null)
         {
             var auraMain = _auraParticles.main;
             auraMain.startColor = CurrentColor;
         }
     }
-    
+
     void TryPaint()
     {
         bool inPaintMode = grabber != null && grabber.IsPainting;
@@ -116,13 +111,18 @@ public class Painter : MonoBehaviour
         Ray ray = _cam.ScreenPointToRay(screenPoint);
         if (!Physics.Raycast(ray, out RaycastHit hit, range)) return;
 
+        // ── PaintableObject (grabbable) ───────────────────────────────────
         PaintableObject paintable = hit.collider.GetComponent<PaintableObject>();
-        if (paintable == null) return;
+        if (paintable != null)
+        {
+            paintable.Paint(hit.textureCoord, CurrentColor, brushSize, hardness);
+            return;
+        }
 
         Debug.Log("Hit UVs: " + hit.textureCoord);
         paintable.Paint(hit.textureCoord, CurrentColor, brushSize, hardness);
     }
-    
+
     public void OnFire(InputAction.CallbackContext context)
     {
         _isPainting = context.ReadValueAsButton();
@@ -144,15 +144,11 @@ public class Painter : MonoBehaviour
 
         if (scrollInput.y != 0)
         {
-
-            if (scrollInput.y > 0) 
-            {
+            if (scrollInput.y > 0)
                 _colorIndex = (_colorIndex + 1) % palette.colors.Length;
-            }
-            else if (scrollInput.y < 0) 
-            {
+            else if (scrollInput.y < 0)
                 _colorIndex = (_colorIndex - 1 + palette.colors.Length) % palette.colors.Length;
-            }
+
             UpdateGunVisual();
         }
     }
