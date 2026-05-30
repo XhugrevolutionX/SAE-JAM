@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7079052344136087905}
   - component: {fileID: 7717353357760033050}
   - component: {fileID: 1945988786174383053}
+  - component: {fileID: 6864752351240444423}
   m_Layer: 0
   m_Name: Cube (12)
   m_TagString: Untagged
@@ -248,7 +249,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 763
+  m_VersionIndex: 778
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -302,7 +303,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -356,6 +357,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &6864752351240444423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61054397830315604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &270184867121042271
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,6 +395,7 @@ GameObject:
   - component: {fileID: 5504363105618232903}
   - component: {fileID: 2172955067976903745}
   - component: {fileID: 5510481713283078170}
+  - component: {fileID: 2316420215925122142}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -604,7 +630,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1209
+  m_VersionIndex: 1224
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -658,7 +684,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -712,6 +738,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &2316420215925122142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270184867121042271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &295048098536426376
 GameObject:
   m_ObjectHideFlags: 0
@@ -726,6 +776,7 @@ GameObject:
   - component: {fileID: 8855484854647549694}
   - component: {fileID: 8468477282155247860}
   - component: {fileID: 965919732034061356}
+  - component: {fileID: 3369553609969927413}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -960,7 +1011,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 563
+  m_VersionIndex: 578
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1014,7 +1065,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1068,6 +1119,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &3369553609969927413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295048098536426376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &482182250600666386
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,6 +1157,7 @@ GameObject:
   - component: {fileID: 5797134080572759010}
   - component: {fileID: 8945096843389988059}
   - component: {fileID: 6624846459473344726}
+  - component: {fileID: 6878154001908498796}
   m_Layer: 0
   m_Name: Cube (9)
   m_TagString: Untagged
@@ -1316,7 +1392,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 753
+  m_VersionIndex: 768
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1370,7 +1446,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1424,6 +1500,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &6878154001908498796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482182250600666386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &518022023691648788
 GameObject:
   m_ObjectHideFlags: 0
@@ -1438,6 +1538,7 @@ GameObject:
   - component: {fileID: 65747974076587181}
   - component: {fileID: 2182867578174405760}
   - component: {fileID: 8125571915528700442}
+  - component: {fileID: 6602649058400353371}
   m_Layer: 0
   m_Name: Cube (13)
   m_TagString: Untagged
@@ -1672,7 +1773,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 365
+  m_VersionIndex: 380
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1726,7 +1827,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1780,6 +1881,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &6602649058400353371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518022023691648788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &1085084841737938275
 GameObject:
   m_ObjectHideFlags: 0
@@ -1794,6 +1919,7 @@ GameObject:
   - component: {fileID: 546801572028993845}
   - component: {fileID: 9149686706161721242}
   - component: {fileID: 3805306175119336987}
+  - component: {fileID: 3053639063198058013}
   m_Layer: 0
   m_Name: Cube (5)
   m_TagString: Untagged
@@ -2028,7 +2154,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 307
+  m_VersionIndex: 322
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2082,7 +2208,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2136,6 +2262,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &3053639063198058013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085084841737938275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &1649908836990138166
 GameObject:
   m_ObjectHideFlags: 0
@@ -2150,6 +2300,7 @@ GameObject:
   - component: {fileID: 5601771228356261115}
   - component: {fileID: 4537000454563321775}
   - component: {fileID: 4537797270999764955}
+  - component: {fileID: 1512332123762322861}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -2384,7 +2535,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1013
+  m_VersionIndex: 1028
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2438,7 +2589,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2492,6 +2643,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &1512332123762322861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649908836990138166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &1708994063256831826
 GameObject:
   m_ObjectHideFlags: 0
@@ -2506,6 +2681,7 @@ GameObject:
   - component: {fileID: 6936513714547194202}
   - component: {fileID: 3314538877805958798}
   - component: {fileID: 3347299320830111042}
+  - component: {fileID: 5957768744861477278}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -2740,7 +2916,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 845
+  m_VersionIndex: 860
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2794,7 +2970,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2848,6 +3024,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &5957768744861477278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708994063256831826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &2485844760904317881
 GameObject:
   m_ObjectHideFlags: 0
@@ -2862,6 +3062,7 @@ GameObject:
   - component: {fileID: 8490403152093082087}
   - component: {fileID: 8101216971332976571}
   - component: {fileID: 4239711925831202684}
+  - component: {fileID: 3591873197769658968}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -3096,7 +3297,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 345
+  m_VersionIndex: 360
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3150,7 +3351,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3204,6 +3405,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &3591873197769658968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2485844760904317881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &2501797943963032384
 GameObject:
   m_ObjectHideFlags: 0
@@ -3218,6 +3443,7 @@ GameObject:
   - component: {fileID: 1847022082933504042}
   - component: {fileID: 4107050832752406699}
   - component: {fileID: 9087238076888314339}
+  - component: {fileID: 755297881735154993}
   m_Layer: 0
   m_Name: Stairs
   m_TagString: Untagged
@@ -6207,7 +6433,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 106
+  m_VersionIndex: 121
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -6268,7 +6494,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6322,6 +6548,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &755297881735154993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2501797943963032384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &2512239287836420198
 GameObject:
   m_ObjectHideFlags: 0
@@ -6336,6 +6586,7 @@ GameObject:
   - component: {fileID: 3685364692858557423}
   - component: {fileID: 1786609890937308063}
   - component: {fileID: 5109232370954147421}
+  - component: {fileID: 4622093143715644798}
   m_Layer: 0
   m_Name: Cube (10)
   m_TagString: Untagged
@@ -6570,7 +6821,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 939
+  m_VersionIndex: 954
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -6624,7 +6875,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6678,6 +6929,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &4622093143715644798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2512239287836420198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &2670297648286639195
 GameObject:
   m_ObjectHideFlags: 0
@@ -6692,6 +6967,7 @@ GameObject:
   - component: {fileID: 5961075027761735874}
   - component: {fileID: 7152616307609360469}
   - component: {fileID: 2913054916547939188}
+  - component: {fileID: 8996931377053639992}
   m_Layer: 0
   m_Name: Cube (11)
   m_TagString: Untagged
@@ -6926,7 +7202,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 705
+  m_VersionIndex: 720
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -6980,7 +7256,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7034,6 +7310,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &8996931377053639992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2670297648286639195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &2882508046785894464
 GameObject:
   m_ObjectHideFlags: 0
@@ -7048,6 +7348,7 @@ GameObject:
   - component: {fileID: 4646359282801722779}
   - component: {fileID: 3885896079384966546}
   - component: {fileID: 5533202183472637582}
+  - component: {fileID: 1073135824596708766}
   m_Layer: 0
   m_Name: Cube (8)
   m_TagString: Untagged
@@ -7282,7 +7583,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 595
+  m_VersionIndex: 610
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -7336,7 +7637,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7390,6 +7691,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &1073135824596708766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2882508046785894464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &2897104744253852416
 GameObject:
   m_ObjectHideFlags: 0
@@ -7404,6 +7729,7 @@ GameObject:
   - component: {fileID: 6179407590562175999}
   - component: {fileID: 3573421441867477856}
   - component: {fileID: 255843594535273353}
+  - component: {fileID: 6436487721218855643}
   m_Layer: 0
   m_Name: Cube (4)
   m_TagString: Untagged
@@ -7638,7 +7964,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 399
+  m_VersionIndex: 414
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -7692,7 +8018,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7746,6 +8072,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &6436487721218855643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2897104744253852416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &3493765283920108446
 GameObject:
   m_ObjectHideFlags: 0
@@ -7760,6 +8110,7 @@ GameObject:
   - component: {fileID: 3187622346531002602}
   - component: {fileID: 8747691391873555190}
   - component: {fileID: 578051585605954488}
+  - component: {fileID: 6107304408981896530}
   m_Layer: 0
   m_Name: Cube (8)
   m_TagString: Untagged
@@ -7994,7 +8345,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1601
+  m_VersionIndex: 1616
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -8048,7 +8399,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8102,6 +8453,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &6107304408981896530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3493765283920108446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &3535840498803582805
 GameObject:
   m_ObjectHideFlags: 0
@@ -8116,6 +8491,7 @@ GameObject:
   - component: {fileID: 4544409060684460208}
   - component: {fileID: 3174135441162943371}
   - component: {fileID: 8577429681308628216}
+  - component: {fileID: 662064766734419090}
   m_Layer: 0
   m_Name: Cube (11)
   m_TagString: Untagged
@@ -8350,7 +8726,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 725
+  m_VersionIndex: 740
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -8404,7 +8780,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8458,6 +8834,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &662064766734419090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3535840498803582805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &3877380896781038817
 GameObject:
   m_ObjectHideFlags: 0
@@ -8472,6 +8872,7 @@ GameObject:
   - component: {fileID: 4267206934193691343}
   - component: {fileID: 7627719688391891320}
   - component: {fileID: 5929136900377758396}
+  - component: {fileID: 3794749999444853945}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -8706,7 +9107,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 983
+  m_VersionIndex: 998
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -8760,7 +9161,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8814,6 +9215,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &3794749999444853945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3877380896781038817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &4109815293153534959
 GameObject:
   m_ObjectHideFlags: 0
@@ -8828,6 +9253,7 @@ GameObject:
   - component: {fileID: 7985745449424863445}
   - component: {fileID: 6143311416391725432}
   - component: {fileID: 5227929266244754388}
+  - component: {fileID: 2411350355261022575}
   m_Layer: 0
   m_Name: Cube (18)
   m_TagString: Untagged
@@ -9062,7 +9488,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 281
+  m_VersionIndex: 296
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -9116,7 +9542,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9170,6 +9596,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &2411350355261022575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4109815293153534959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &4118882694021799969
 GameObject:
   m_ObjectHideFlags: 0
@@ -9184,6 +9634,7 @@ GameObject:
   - component: {fileID: 2384659651307714131}
   - component: {fileID: 3089270617936081978}
   - component: {fileID: 306861895949503025}
+  - component: {fileID: 5786740813198527716}
   m_Layer: 0
   m_Name: Cube (9)
   m_TagString: Untagged
@@ -9418,7 +9869,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 295
+  m_VersionIndex: 310
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -9472,7 +9923,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9526,6 +9977,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &5786740813198527716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4118882694021799969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &4255209768305696223
 GameObject:
   m_ObjectHideFlags: 0
@@ -9540,6 +10015,7 @@ GameObject:
   - component: {fileID: 2643762528863918938}
   - component: {fileID: 2117482349092735374}
   - component: {fileID: 7171245079889182854}
+  - component: {fileID: 3493213634646187806}
   m_Layer: 0
   m_Name: Stairs (1)
   m_TagString: Untagged
@@ -12529,7 +13005,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 134
+  m_VersionIndex: 149
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -12590,7 +13066,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12644,6 +13120,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &3493213634646187806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4255209768305696223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &4390820941648757816
 GameObject:
   m_ObjectHideFlags: 0
@@ -12658,6 +13158,7 @@ GameObject:
   - component: {fileID: 6203994753511068722}
   - component: {fileID: 8686679951652792937}
   - component: {fileID: 4999073197418877324}
+  - component: {fileID: 3001178046893569914}
   m_Layer: 0
   m_Name: Cube (7)
   m_TagString: Untagged
@@ -12892,7 +13393,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 691
+  m_VersionIndex: 706
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -12946,7 +13447,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13000,6 +13501,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &3001178046893569914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4390820941648757816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &4412505464645859341
 GameObject:
   m_ObjectHideFlags: 0
@@ -13014,6 +13539,7 @@ GameObject:
   - component: {fileID: 797883344398385071}
   - component: {fileID: 1784976865255513944}
   - component: {fileID: 8025889567068964813}
+  - component: {fileID: 9175311531695273951}
   m_Layer: 0
   m_Name: Cube (23)
   m_TagString: Untagged
@@ -13248,7 +13774,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 319
+  m_VersionIndex: 334
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -13302,7 +13828,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13356,6 +13882,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &9175311531695273951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4412505464645859341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &4753290721501557399
 GameObject:
   m_ObjectHideFlags: 0
@@ -13370,6 +13920,7 @@ GameObject:
   - component: {fileID: 5602092233866819807}
   - component: {fileID: 3569717880080942208}
   - component: {fileID: 1628727908694554795}
+  - component: {fileID: 3955673155075815107}
   m_Layer: 0
   m_Name: Cube (5)
   m_TagString: Untagged
@@ -13604,7 +14155,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 601
+  m_VersionIndex: 616
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -13658,7 +14209,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13712,6 +14263,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &3955673155075815107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4753290721501557399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &4766911727229889172
 GameObject:
   m_ObjectHideFlags: 0
@@ -13726,6 +14301,7 @@ GameObject:
   - component: {fileID: 7285913631472819245}
   - component: {fileID: 2808888078365614833}
   - component: {fileID: 4561834931016596227}
+  - component: {fileID: 2530750865731663592}
   m_Layer: 0
   m_Name: Cube (12)
   m_TagString: Untagged
@@ -13960,7 +14536,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 567
+  m_VersionIndex: 582
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -14014,7 +14590,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14068,6 +14644,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &2530750865731663592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4766911727229889172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &4841031859205777234
 GameObject:
   m_ObjectHideFlags: 0
@@ -14082,6 +14682,7 @@ GameObject:
   - component: {fileID: 8134451501761131884}
   - component: {fileID: 9129589345130872559}
   - component: {fileID: 7979175551171237709}
+  - component: {fileID: 5953728727309268197}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -14316,7 +14917,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 497
+  m_VersionIndex: 512
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -14370,7 +14971,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14424,6 +15025,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &5953728727309268197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4841031859205777234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &4898727390024139286
 GameObject:
   m_ObjectHideFlags: 0
@@ -14438,6 +15063,7 @@ GameObject:
   - component: {fileID: 1833661372453399187}
   - component: {fileID: 7118692720657263160}
   - component: {fileID: 1575627210292446339}
+  - component: {fileID: 2267120644587026072}
   m_Layer: 0
   m_Name: Cube (6)
   m_TagString: Untagged
@@ -14672,7 +15298,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1707
+  m_VersionIndex: 1722
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -14726,7 +15352,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14780,6 +15406,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &2267120644587026072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4898727390024139286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &4923653761979645715
 GameObject:
   m_ObjectHideFlags: 0
@@ -14794,6 +15444,7 @@ GameObject:
   - component: {fileID: 4827572027316416480}
   - component: {fileID: 4741827307823597610}
   - component: {fileID: 1729418734245985378}
+  - component: {fileID: 6783129676118657689}
   m_Layer: 0
   m_Name: Cube (13)
   m_TagString: Untagged
@@ -15028,7 +15679,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 835
+  m_VersionIndex: 850
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -15082,7 +15733,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15136,6 +15787,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &6783129676118657689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4923653761979645715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &5111618708933477426
 GameObject:
   m_ObjectHideFlags: 0
@@ -15150,6 +15825,7 @@ GameObject:
   - component: {fileID: 5692763305022869574}
   - component: {fileID: 6501293323003929211}
   - component: {fileID: 3719392068964142900}
+  - component: {fileID: 9149375978954834249}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -15384,7 +16060,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2863
+  m_VersionIndex: 2878
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -15438,7 +16114,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15492,6 +16168,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &9149375978954834249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5111618708933477426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &5408281506101390070
 GameObject:
   m_ObjectHideFlags: 0
@@ -15506,6 +16206,7 @@ GameObject:
   - component: {fileID: 2457771965004573851}
   - component: {fileID: 8429072552936265438}
   - component: {fileID: 1959531827325695513}
+  - component: {fileID: 3013932082512389900}
   m_Layer: 0
   m_Name: Stairs (2)
   m_TagString: Untagged
@@ -16589,7 +17290,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 36
+  m_VersionIndex: 51
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -16650,7 +17351,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16704,6 +17405,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &3013932082512389900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5408281506101390070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &5689035920173001055
 GameObject:
   m_ObjectHideFlags: 0
@@ -16791,6 +17516,7 @@ GameObject:
   - component: {fileID: 3078361428740927577}
   - component: {fileID: 1094607597357038589}
   - component: {fileID: 2194888272224660462}
+  - component: {fileID: 2164906601159717537}
   m_Layer: 0
   m_Name: Cube (7)
   m_TagString: Untagged
@@ -17025,7 +17751,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 515
+  m_VersionIndex: 530
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -17079,7 +17805,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17133,6 +17859,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &2164906601159717537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5772263156838579257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &5969119500754147773
 GameObject:
   m_ObjectHideFlags: 0
@@ -17147,6 +17897,7 @@ GameObject:
   - component: {fileID: 910916080320573822}
   - component: {fileID: 5276296670079767938}
   - component: {fileID: 6948442483118893037}
+  - component: {fileID: 6595144296873950422}
   m_Layer: 0
   m_Name: Cube (6)
   m_TagString: Untagged
@@ -17381,7 +18132,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 601
+  m_VersionIndex: 616
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -17435,7 +18186,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17489,6 +18240,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &6595144296873950422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5969119500754147773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &6274965371632662249
 GameObject:
   m_ObjectHideFlags: 0
@@ -17503,6 +18278,7 @@ GameObject:
   - component: {fileID: 6825311374861616407}
   - component: {fileID: 7847842906565834003}
   - component: {fileID: 2832041678324150501}
+  - component: {fileID: 41915721029556969}
   m_Layer: 0
   m_Name: Cube (19)
   m_TagString: Untagged
@@ -17737,7 +18513,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 383
+  m_VersionIndex: 398
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -17791,7 +18567,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17845,6 +18621,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &41915721029556969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6274965371632662249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &7102849889741811876
 GameObject:
   m_ObjectHideFlags: 0
@@ -17859,6 +18659,7 @@ GameObject:
   - component: {fileID: 8762557308619336449}
   - component: {fileID: 4488582331082803938}
   - component: {fileID: 1344051203148098564}
+  - component: {fileID: 1652644855359418218}
   m_Layer: 0
   m_Name: Cube (4)
   m_TagString: Untagged
@@ -18093,7 +18894,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1499
+  m_VersionIndex: 1514
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -18147,7 +18948,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18201,6 +19002,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &1652644855359418218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7102849889741811876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &7144112227243173280
 GameObject:
   m_ObjectHideFlags: 0
@@ -18215,6 +19040,7 @@ GameObject:
   - component: {fileID: 82222125738275517}
   - component: {fileID: 6078150320973203420}
   - component: {fileID: 6082574499670277677}
+  - component: {fileID: 7656922219043640221}
   m_Layer: 0
   m_Name: Cube (14)
   m_TagString: Untagged
@@ -18449,7 +19275,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 457
+  m_VersionIndex: 472
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -18503,7 +19329,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18557,6 +19383,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &7656922219043640221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7144112227243173280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &7719050495204000868
 GameObject:
   m_ObjectHideFlags: 0
@@ -18571,6 +19421,7 @@ GameObject:
   - component: {fileID: 6613790590688542733}
   - component: {fileID: 5399902916237471343}
   - component: {fileID: 4253133034595768624}
+  - component: {fileID: 7413511042584991605}
   m_Layer: 0
   m_Name: Cube (16)
   m_TagString: Untagged
@@ -18805,7 +19656,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1237
+  m_VersionIndex: 1252
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -18859,7 +19710,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18913,6 +19764,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &7413511042584991605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7719050495204000868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &8032596327010495100
 GameObject:
   m_ObjectHideFlags: 0
@@ -18927,6 +19802,7 @@ GameObject:
   - component: {fileID: 1165949642687925599}
   - component: {fileID: 5403367603092538145}
   - component: {fileID: 1093066153370976239}
+  - component: {fileID: 398973373480210961}
   m_Layer: 0
   m_Name: Cube (10)
   m_TagString: Untagged
@@ -19161,7 +20037,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1177
+  m_VersionIndex: 1192
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -19215,7 +20091,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19269,6 +20145,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &398973373480210961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8032596327010495100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &8366578974649459040
 GameObject:
   m_ObjectHideFlags: 0
@@ -19283,6 +20183,7 @@ GameObject:
   - component: {fileID: 9048678336543203690}
   - component: {fileID: 6994678359656070828}
   - component: {fileID: 5113068635307464720}
+  - component: {fileID: 2603421069434790657}
   m_Layer: 0
   m_Name: Cube (14)
   m_TagString: Untagged
@@ -19517,7 +20418,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1601
+  m_VersionIndex: 1616
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -19571,7 +20472,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19625,6 +20526,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &2603421069434790657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8366578974649459040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &8380112755097932753
 GameObject:
   m_ObjectHideFlags: 0
@@ -19639,6 +20564,7 @@ GameObject:
   - component: {fileID: 7874412975022978874}
   - component: {fileID: 7570831054307107740}
   - component: {fileID: 1128477377189584794}
+  - component: {fileID: 6425362709301241860}
   m_Layer: 0
   m_Name: Cube (21)
   m_TagString: Untagged
@@ -19873,7 +20799,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 745
+  m_VersionIndex: 760
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -19927,7 +20853,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19981,6 +20907,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &6425362709301241860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8380112755097932753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &8680475093135985684
 GameObject:
   m_ObjectHideFlags: 0
@@ -19995,6 +20945,7 @@ GameObject:
   - component: {fileID: 3829247189779212881}
   - component: {fileID: 660276649996899478}
   - component: {fileID: 9006140977016332588}
+  - component: {fileID: 8379357147944630571}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -20229,7 +21180,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1383
+  m_VersionIndex: 1398
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -20283,7 +21234,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20337,6 +21288,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &8379357147944630571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8680475093135985684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &8825048151460668953
 GameObject:
   m_ObjectHideFlags: 0
@@ -20351,6 +21326,7 @@ GameObject:
   - component: {fileID: 2275081095389549054}
   - component: {fileID: 4891380256613143127}
   - component: {fileID: 747614391392798336}
+  - component: {fileID: 8580216906323492361}
   m_Layer: 0
   m_Name: Cube (22)
   m_TagString: Untagged
@@ -20585,7 +21561,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 613
+  m_VersionIndex: 628
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -20639,7 +21615,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -20693,6 +21669,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &8580216906323492361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8825048151460668953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1 &9205780107641238020
 GameObject:
   m_ObjectHideFlags: 0
@@ -20707,6 +21707,7 @@ GameObject:
   - component: {fileID: 4989214755776533243}
   - component: {fileID: 5372015187812001608}
   - component: {fileID: 5375281226146063145}
+  - component: {fileID: 5309483672886831695}
   m_Layer: 0
   m_Name: Cube (20)
   m_TagString: Untagged
@@ -20941,7 +21942,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 149
+  m_VersionIndex: 164
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -20995,7 +21996,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: d50360342f336a44fa927a91ceb9cc67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21049,6 +22050,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &5309483672886831695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9205780107641238020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37b0e7aee830994294f23d917e62abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintableObject
+  cleanTexture: {fileID: 2800000, guid: 5437d7ba0ed6609458a5a47f84445eda, type: 3}
+  initialTexture: {fileID: 0}
+  brushShader: {fileID: 4800000, guid: e87d1994c5107c3429e08666a8cca614, type: 3}
+  textureSize: 1024
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  coverageThreshold: 0.9
+  colorScoreThreshold: 0.65
+  palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  colorMatchTolerance: 80
+  paintedThreshold: 60
+  hintKey: 104
+  hintDuration: 2
 --- !u!1001 &1438431793343074274
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21063,15 +22088,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4828985324127633236, guid: f8db2abcf05a84b40b01aac3a440c95d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 50
+      value: 30.000002
       objectReference: {fileID: 0}
     - target: {fileID: 4828985324127633236, guid: f8db2abcf05a84b40b01aac3a440c95d, type: 3}
       propertyPath: m_LocalScale.y
-      value: 50
+      value: 30.000002
       objectReference: {fileID: 0}
     - target: {fileID: 4828985324127633236, guid: f8db2abcf05a84b40b01aac3a440c95d, type: 3}
       propertyPath: m_LocalScale.z
-      value: 50
+      value: 30.000002
       objectReference: {fileID: 0}
     - target: {fileID: 4828985324127633236, guid: f8db2abcf05a84b40b01aac3a440c95d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21079,7 +22104,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4828985324127633236, guid: f8db2abcf05a84b40b01aac3a440c95d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.0532827
+      value: 0.031969845
       objectReference: {fileID: 0}
     - target: {fileID: 4828985324127633236, guid: f8db2abcf05a84b40b01aac3a440c95d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -21120,8 +22145,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 735753593481098734, guid: f8db2abcf05a84b40b01aac3a440c95d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8864939446439386026}
   m_SourcePrefab: {fileID: 100100000, guid: f8db2abcf05a84b40b01aac3a440c95d, type: 3}
+--- !u!1 &1856536271082486284 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 735753593481098734, guid: f8db2abcf05a84b40b01aac3a440c95d, type: 3}
+  m_PrefabInstance: {fileID: 1438431793343074274}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8864939446439386026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856536271082486284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f046cf0ca587428468d0cbc3a9fd5a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PaintReward
+  rewardAmount: 50
 --- !u!4 &5832819615920828598 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4828985324127633236, guid: f8db2abcf05a84b40b01aac3a440c95d, type: 3}

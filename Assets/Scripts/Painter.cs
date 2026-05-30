@@ -15,12 +15,19 @@ public class Painter : MonoBehaviour
     private float _nextPaintTime;
     [SerializeField] private Camera _cam;
 
+    [Header("Visuals")]
+    [SerializeField] private Renderer _gunRenderer;
+    
     private bool _isPainting;
     private bool _isRotating;
     private Vector2 _pointerPosition;
 
     public Color CurrentColor => palette.colors[_colorIndex];
 
+    void Start()
+    {
+        UpdateGunVisual();
+    }
     void Update()
     {
         
@@ -35,6 +42,14 @@ public class Painter : MonoBehaviour
         }
     }
 
+    void UpdateGunVisual()
+    {
+        if (_gunRenderer != null && palette != null && palette.colors.Length > 0)
+        {
+            _gunRenderer.material.color = CurrentColor;
+        }
+    }
+    
     void TryPaint()
     {
         bool inPaintMode = grabber != null && grabber.IsPainting;
@@ -82,6 +97,7 @@ public class Painter : MonoBehaviour
             {
                 _colorIndex = (_colorIndex - 1 + palette.colors.Length) % palette.colors.Length;
             }
+            UpdateGunVisual();
         }
     }
 }
