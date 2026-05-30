@@ -86,7 +86,7 @@ public class PaintableObject : MonoBehaviour
         _brushMaterial  = new Material(brushShader);
         _cachedColorTex = new Texture2D(1, 1);
         _readbackTex    = new Texture2D(COVERAGE_SIZE, COVERAGE_SIZE, TextureFormat.RGBA32, false);
-
+        
         CaptureInitialPixels();
         BuildExpectedColors();
         BakeHintTexture();
@@ -95,7 +95,16 @@ public class PaintableObject : MonoBehaviour
         if (mf == null || mf.sharedMesh == null) { Debug.LogError($"{name}: No MeshFilter!"); return; }
         Mesh mesh = mf.sharedMesh;
         if (mesh.uv == null || mesh.uv.Length == 0) { Debug.LogError($"{name}: No UVs!"); return; }
-
+        if (!mesh.isReadable)
+        {
+            // Copy the mesh so we can read it
+            Mesh meshCopy = Instantiate(mesh);
+            mf.sharedMesh = meshCopy;
+            GetComponent<MeshCollider>().sharedMesh = meshCopy;
+            mesh = meshCopy;
+            Debug.Log($"{name}: copied mesh to make it readable");
+        }
+        
         BakeUVMask(mesh);
         StartCoroutine(CoverageLoop());
     }
