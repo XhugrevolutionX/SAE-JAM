@@ -516,6 +516,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: bd081ff4-64e4-48a0-85b5-347249143c36
     m_ActionName: 'Player/Look[/XInputControllerWindows/rightStick,/Mouse/delta]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e14b621a-64d8-496d-beb9-af08c288cfe0
+    m_ActionName: 'Player/Scroll[/Mouse/scroll]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -535,7 +539,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   gravity: -9.81
-  jumpHeight: 1.2
   cameraTransform: {fileID: 1782610869}
   mouseSensitivity: 25
   grabber: {fileID: 1782610874}
@@ -836,10 +839,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Painter
   palette: {fileID: 11400000, guid: b13317b866816124c9e181d7c8c50b1c, type: 2}
+  grabber: {fileID: 1782610874}
   brushSize: 0.02
   hardness: 0.8
   range: 10
   paintRate: 0.01
+  _cam: {fileID: 1782610873}
 --- !u!114 &1782610871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -959,6 +964,7 @@ MonoBehaviour:
   holdDistance: 2
   rotateSpeed: 200
   smoothSpeed: 10
+  paintModeKey: 20
 --- !u!4 &543450652641501458 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4828985324127633236, guid: f8db2abcf05a84b40b01aac3a440c95d, type: 3}
@@ -1023,6 +1029,10 @@ PrefabInstance:
       propertyPath: uvMaskShader
       value: 
       objectReference: {fileID: 4800000, guid: 8ad8310ec0f359d4e8c73837100a17c9, type: 3}
+    - target: {fileID: 3422695029203562286, guid: f8db2abcf05a84b40b01aac3a440c95d, type: 3}
+      propertyPath: initialTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 96032ddd8c81dbe4f8a766f9552a31be, type: 3}
     - target: {fileID: 4828985324127633236, guid: f8db2abcf05a84b40b01aac3a440c95d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2
