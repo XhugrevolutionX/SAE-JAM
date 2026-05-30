@@ -71,8 +71,8 @@ public class ObjectGrabber : MonoBehaviour
     {
         ExitPaintMode();
 
-        _heldTransform.position = _originalPosition;
-        _heldTransform.rotation = _originalRotation;
+        //_heldTransform.position = _originalPosition;
+        //_heldTransform.rotation = _originalRotation;
         _heldTransform.parent   = _originalParent;
 
         var rb = _heldTransform.GetComponent<Rigidbody>();
