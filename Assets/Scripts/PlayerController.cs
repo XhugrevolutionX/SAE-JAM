@@ -72,12 +72,5 @@ public class PlayerController : MonoBehaviour
         lookInput = context.ReadValue<Vector2>();
     }
     
-
-    public void OnFire(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            Debug.Log("Tir effectué !");
-        }
-    }
+    
 }

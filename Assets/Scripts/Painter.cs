@@ -17,6 +17,7 @@ public class Painter : MonoBehaviour
     public float range     = 10f;
     public float paintRate = 0.05f;
 
+    private Vector2 ScrollInput;
     private int   _colorIndex    = 0;
     private float _nextPaintTime;
     private Camera _cam;
@@ -53,5 +54,18 @@ public class Painter : MonoBehaviour
         if (paintable == null) return;
 
         paintable.Paint(hit.textureCoord, CurrentColor, brushSize, hardness);
+    }
+    
+    public void OnFire(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Debug.Log("Tir effectué !");
+        }
+    }
+
+    public void OnScroll(InputAction.CallbackContext context)
+    {
+        ScrollInput = context.ReadValue<Vector2>();
     }
 }
