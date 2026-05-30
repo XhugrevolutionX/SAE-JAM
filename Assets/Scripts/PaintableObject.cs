@@ -8,49 +8,57 @@ using System.Threading.Tasks;
 public class PaintableObject : MonoBehaviour
 {
     [Header("Textures")]
-    public Texture2D cleanTexture;
-    public Texture2D initialTexture;
-    public Shader brushShader;
+    public Texture2D  cleanTexture;
+    public Texture2D  initialTexture;
+    public Shader     brushShader;
 
     [Header("Settings")]
     public int   textureSize       = 1024;
     public Color baseColor         = Color.white;
     public float coverageThreshold = 0.8f;
 
-    // Small RT used only for coverage readback — 64x cheaper than full size
+    [Header("Color Matching")]
+    public ColorPalette palette;
+    [Tooltip("How many color zones to extract from the clean texture")]
+    public int dominantColorCount = 4;
+    [Tooltip("How close a painted color needs to be to the expected palette color (0=strict, 255=anything)")]
+    [Range(0, 255)]
+    public int colorMatchTolerance = 80;
+
     private const int COVERAGE_SIZE = 128;
 
     private RenderTexture _paintRT;
     private RenderTexture _tempRT;
-    private RenderTexture _coverageRT;  // downsampled copy for readback
+    private RenderTexture _coverageRT;
     private Material      _brushMaterial;
     private Texture2D     _cachedColorTex;
-    private Texture2D     _readbackTex;  // 128x128 — tiny
+    private Texture2D     _readbackTex;
 
-    private bool  _isComplete      = false;
-    private bool  _isDirty         = false;
-    private bool  _isCounting      = false; // prevents overlapping coverage checks
-    private float _lastCoverage    = 0f;
+    private bool  _isComplete   = false;
+    private bool  _isDirty      = false;
+    private bool  _isCounting   = false;
+    private float _lastCoverage = 0f;
 
-    // Reachable mask at COVERAGE_SIZE resolution
-    private bool[] _reachableMask;
-    private int    _totalValidPixels = 0;
+    private bool[]    _reachableMask;
+    private int       _totalValidPixels = 0;
+    private Color32[] _initialPixels;
+
+    // Per-pixel expected palette color (as byte[3])
+    // Built at startup by mapping each clean texture pixel
+    // to the closest available palette color
+    private byte[][] _expectedColors; // [pixelIndex] = {r,g,b} of the palette color expected there
 
     public System.Action<PaintableObject> OnComplete;
 
     void Start()
     {
-        // Full resolution RTs for painting
-        _paintRT = new RenderTexture(textureSize, textureSize, 0, GraphicsFormat.R8G8B8A8_SRGB);
-        _tempRT  = new RenderTexture(textureSize, textureSize, 0, GraphicsFormat.R8G8B8A8_SRGB);
+        _paintRT    = new RenderTexture(textureSize, textureSize, 0, GraphicsFormat.R8G8B8A8_SRGB);
+        _tempRT     = new RenderTexture(textureSize, textureSize, 0, GraphicsFormat.R8G8B8A8_SRGB);
+        _coverageRT = new RenderTexture(COVERAGE_SIZE, COVERAGE_SIZE, 0, GraphicsFormat.R8G8B8A8_SRGB);
         _paintRT.Create();
         _tempRT.Create();
-
-        // Small RT just for coverage — 128x128
-        _coverageRT  = new RenderTexture(COVERAGE_SIZE, COVERAGE_SIZE, 0, GraphicsFormat.R8G8B8A8_SRGB);
         _coverageRT.Create();
 
-        // Initialize paint RT with base color
         if (initialTexture != null)
             Graphics.Blit(initialTexture, _paintRT);
         else
@@ -63,14 +71,13 @@ public class PaintableObject : MonoBehaviour
         }
 
         GetComponent<Renderer>().material.SetTexture("_BaseMap", _paintRT);
-
         _brushMaterial  = new Material(brushShader);
         _cachedColorTex = new Texture2D(1, 1);
+        _readbackTex    = new Texture2D(COVERAGE_SIZE, COVERAGE_SIZE, TextureFormat.RGBA32, false);
 
-        // Readback texture is now tiny — 128x128 instead of 1024x1024
-        _readbackTex = new Texture2D(COVERAGE_SIZE, COVERAGE_SIZE, TextureFormat.RGBA32, false);
+        CaptureInitialPixels();
+        BuildExpectedColors();
 
-        // Mesh checks
         MeshFilter mf = GetComponent<MeshFilter>();
         if (mf == null || mf.sharedMesh == null)
         {
@@ -89,15 +96,107 @@ public class PaintableObject : MonoBehaviour
         StartCoroutine(CoverageLoop());
     }
 
+    // ── Initial Pixels ────────────────────────────────────────────────────
+
+    void CaptureInitialPixels()
+    {
+        if (initialTexture != null)
+            Graphics.Blit(initialTexture, _coverageRT);
+        else
+        {
+            Texture2D tmp = new Texture2D(1, 1);
+            tmp.SetPixel(0, 0, baseColor);
+            tmp.Apply();
+            Graphics.Blit(tmp, _coverageRT);
+            Destroy(tmp);
+        }
+
+        Texture2D capture = new Texture2D(COVERAGE_SIZE, COVERAGE_SIZE, TextureFormat.RGBA32, false);
+        RenderTexture.active = _coverageRT;
+        capture.ReadPixels(new Rect(0, 0, COVERAGE_SIZE, COVERAGE_SIZE), 0, 0);
+        capture.Apply();
+        RenderTexture.active = null;
+        _initialPixels = capture.GetPixels32();
+        Destroy(capture);
+    }
+
+    // ── Expected Colors ───────────────────────────────────────────────────
+    // For each pixel in the clean texture, find the closest available
+    // palette color and store it. Coverage then checks against THAT color,
+    // not the raw clean texture value — so only palette colors are ever expected.
+
+    void BuildExpectedColors()
+    {
+        if (cleanTexture == null || palette == null || palette.colors.Length == 0)
+        {
+            _expectedColors = null;
+            return;
+        }
+
+        // Downsample clean texture to coverage resolution
+        Graphics.Blit(cleanTexture, _coverageRT);
+        Texture2D capture = new Texture2D(COVERAGE_SIZE, COVERAGE_SIZE, TextureFormat.RGBA32, false);
+        RenderTexture.active = _coverageRT;
+        capture.ReadPixels(new Rect(0, 0, COVERAGE_SIZE, COVERAGE_SIZE), 0, 0);
+        capture.Apply();
+        RenderTexture.active = null;
+        Color32[] cleanPixels = capture.GetPixels32();
+        Destroy(capture);
+
+        // Pre-convert palette colors to bytes for comparison
+        byte[][] paletteBytes = new byte[palette.colors.Length][];
+        for (int i = 0; i < palette.colors.Length; i++)
+        {
+            Color c = palette.colors[i];
+            paletteBytes[i] = new byte[]
+            {
+                (byte)(c.r * 255),
+                (byte)(c.g * 255),
+                (byte)(c.b * 255)
+            };
+        }
+
+        // For each clean texture pixel, find the closest palette color
+        _expectedColors = new byte[cleanPixels.Length][];
+        int[] matchCounts = new int[palette.colors.Length]; // for debug
+
+        for (int i = 0; i < cleanPixels.Length; i++)
+        {
+            float bestDist = float.MaxValue;
+            int   bestIdx  = 0;
+
+            for (int p = 0; p < paletteBytes.Length; p++)
+            {
+                float dist = Mathf.Abs(cleanPixels[i].r - paletteBytes[p][0]) +
+                             Mathf.Abs(cleanPixels[i].g - paletteBytes[p][1]) +
+                             Mathf.Abs(cleanPixels[i].b - paletteBytes[p][2]);
+                if (dist < bestDist) { bestDist = dist; bestIdx = p; }
+            }
+
+            _expectedColors[i] = paletteBytes[bestIdx];
+            matchCounts[bestIdx]++;
+        }
+
+        // Log which palette colors are expected and how much of the surface they cover
+        for (int p = 0; p < palette.colors.Length; p++)
+        {
+            if (matchCounts[p] > 0)
+            {
+                float pct = matchCounts[p] * 100f / cleanPixels.Length;
+                Debug.Log($"{name}: zone mapped to palette[{p}] " +
+                          $"RGB({paletteBytes[p][0]},{paletteBytes[p][1]},{paletteBytes[p][2]}) " +
+                          $"covers {pct:0.0}% of surface");
+            }
+        }
+    }
+
     // ── UV Mask ───────────────────────────────────────────────────────────
-    // Bakes at COVERAGE_SIZE resolution so the mask matches the readback texture
 
     void BakeUVMask(Mesh mesh)
     {
         int size = COVERAGE_SIZE;
 
-        // Step 1 — rasterize all UV triangles into a base mask
-        bool[] mask = new bool[size * size];
+        bool[]    mask = new bool[size * size];
         Vector2[] uvs  = mesh.uv;
         int[]     tris = mesh.triangles;
 
@@ -122,17 +221,15 @@ public class PaintableObject : MonoBehaviour
                         mask[y * size + x] = true;
         }
 
-        // Step 2 — filter to reachable pixels via raycasting
-        bool[]   reachable = new bool[size * size];
-        Bounds   bounds    = GetComponent<Renderer>().bounds;
-        Vector3  center    = bounds.center;
-        float    radius    = bounds.extents.magnitude * 2f;
-        int      spread    = Mathf.Max(1, size / 64); // ~2px spread at 128
+        bool[]  reachable = new bool[size * size];
+        Bounds  bounds    = GetComponent<Renderer>().bounds;
+        Vector3 center    = bounds.center;
+        float   radius    = bounds.extents.magnitude * 2f;
+        int     spread    = Mathf.Max(1, size / 64);
 
-        int rayCount = 1000;
-        for (int i = 0; i < rayCount; i++)
+        for (int i = 0; i < 1000; i++)
         {
-            float t           = i / (float)rayCount;
+            float t           = i / 1000f;
             float inclination = Mathf.Acos(1 - 2 * t);
             float azimuth     = 2 * Mathf.PI * 1.618033f * i;
 
@@ -161,12 +258,12 @@ public class PaintableObject : MonoBehaviour
             }
         }
 
-        _reachableMask = reachable;
+        _reachableMask    = reachable;
         _totalValidPixels = 0;
         foreach (bool b in reachable)
             if (b) _totalValidPixels++;
 
-        Debug.Log($"{name}: {_totalValidPixels} reachable pixels at {size}x{size} ({_totalValidPixels * 100f / (size * size):0.0}%)");
+        Debug.Log($"{name}: {_totalValidPixels} reachable pixels ({_totalValidPixels * 100f / (size * size):0.0}%)");
     }
 
     bool PointInTriangle(Vector2 p, Vector2Int a, Vector2Int b, Vector2Int c)
@@ -214,39 +311,52 @@ public class PaintableObject : MonoBehaviour
             _isDirty    = false;
             _isCounting = true;
 
-            // Downsample to 128x128
             Graphics.Blit(_paintRT, _coverageRT);
-
             RenderTexture.active = _coverageRT;
             _readbackTex.ReadPixels(new Rect(0, 0, COVERAGE_SIZE, COVERAGE_SIZE), 0, 0);
             _readbackTex.Apply();
             RenderTexture.active = null;
 
-            // Copy data for background thread
-            Color32[] pixels   = _readbackTex.GetPixels32();
-            bool[]    mask     = _reachableMask;
-            int       total    = _totalValidPixels;
-            byte      br       = (byte)(baseColor.r * 255);
-            byte      bg       = (byte)(baseColor.g * 255);
-            byte      bb       = (byte)(baseColor.b * 255);
-            int       painted  = 0;
+            Color32[]  pixels    = _readbackTex.GetPixels32();
+            bool[]     mask      = _reachableMask;
+            int        total     = _totalValidPixels;
+            Color32[]  initial   = _initialPixels;
+            byte[][]   expected  = _expectedColors;
+            int        tolerance = colorMatchTolerance;
+            int        painted   = 0;
 
-            // Run pixel counting on background thread
             Task countTask = Task.Run(() =>
             {
                 int count = 0;
                 for (int i = 0; i < pixels.Length; i++)
                 {
                     if (!mask[i]) continue;
-                    int dist = Mathf.Abs(pixels[i].r - br) +
-                               Mathf.Abs(pixels[i].g - bg) +
-                               Mathf.Abs(pixels[i].b - bb);
-                    if (dist > 38) count++; // 38 ≈ 0.15 * 255
+
+                    // Step 1 — is this pixel painted at all?
+                    int distFromInitial = initial != null
+                        ? Mathf.Abs(pixels[i].r - initial[i].r) +
+                          Mathf.Abs(pixels[i].g - initial[i].g) +
+                          Mathf.Abs(pixels[i].b - initial[i].b)
+                        : 255;
+
+                    if (distFromInitial <= 38) continue; // not painted
+
+                    // Step 2 — does it match the expected PALETTE color at this position?
+                    if (expected != null)
+                    {
+                        int distFromExpected = Mathf.Abs(pixels[i].r - expected[i][0]) +
+                                               Mathf.Abs(pixels[i].g - expected[i][1]) +
+                                               Mathf.Abs(pixels[i].b - expected[i][2]);
+                        if (distFromExpected <= tolerance) count++;
+                    }
+                    else
+                    {
+                        count++;
+                    }
                 }
                 painted = count;
             });
 
-            // Wait for thread to finish without blocking main thread
             while (!countTask.IsCompleted)
                 yield return null;
 
@@ -256,7 +366,7 @@ public class PaintableObject : MonoBehaviour
             _lastCoverage = total > 0 ? (float)painted / total : 0f;
             _isCounting   = false;
 
-            Debug.Log($"{gameObject.name}: {_lastCoverage * 100f:0}% painted");
+            Debug.Log($"{gameObject.name}: {_lastCoverage * 100f:0}% correctly painted");
 
             if (_lastCoverage >= coverageThreshold)
                 Complete();

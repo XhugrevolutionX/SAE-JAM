@@ -4,14 +4,7 @@ using UnityEngine.InputSystem;
 public class Painter : MonoBehaviour
 {
     [Header("Paint Settings")]
-    public Color[] palette = new Color[]
-    {
-        Color.red,
-        Color.blue,
-        Color.green,
-        Color.yellow,
-    };
-
+    public ColorPalette palette;
     public float brushSize = 0.2f;
     public float hardness  = 0.8f;
     public float range     = 10f;
@@ -22,7 +15,7 @@ public class Painter : MonoBehaviour
     private float _nextPaintTime;
     private Camera _cam;
 
-    public Color CurrentColor => palette[_colorIndex];
+    public Color CurrentColor => palette.colors[_colorIndex];
 
     void Awake() => _cam = GetComponent<Camera>();
 
@@ -40,8 +33,8 @@ public class Painter : MonoBehaviour
     void HandleColorSwitch()
     {
         float scroll = Mouse.current.scroll.ReadValue().y;
-        if (scroll > 0) _colorIndex = (_colorIndex + 1) % palette.Length;
-        if (scroll < 0) _colorIndex = (_colorIndex - 1 + palette.Length) % palette.Length;
+        if (scroll > 0) _colorIndex = (_colorIndex + 1) % palette.colors.Length;
+        if (scroll < 0) _colorIndex = (_colorIndex - 1 + palette.colors.Length) % palette.colors.Length;
     }
 
     void TryPaint()
