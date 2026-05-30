@@ -14,11 +14,11 @@ public class Painter : MonoBehaviour
     private Vector2 ScrollInput;
     private int   _colorIndex    = 0;
     private float _nextPaintTime;
-    private Camera _cam;
+    [SerializeField] private Camera _cam;
 
     public Color CurrentColor => palette.colors[_colorIndex];
 
-    void Awake() => _cam = GetComponent<Camera>();
+    //void Awake() => _cam = GetComponent<Camera>();
 
     void Update()
     {
