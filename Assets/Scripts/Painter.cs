@@ -11,12 +11,15 @@ public class Painter : MonoBehaviour
     public float range     = 10f;
     public float paintRate = 0.05f;
 
+    
     private int   _colorIndex    = 0;
     private float _nextPaintTime;
     [SerializeField] private Camera _cam;
 
     [Header("Visuals")]
     [SerializeField] private Renderer _gunRenderer;
+    [SerializeField] private ParticleSystem _paintParticles;
+    [SerializeField] private ParticleSystem _auraParticles;
     
     private bool _isPainting;
     private bool _isRotating;
@@ -30,23 +33,75 @@ public class Painter : MonoBehaviour
     }
     void Update()
     {
+        AimTowardsCrosshair();
         
         bool holdingObject = grabber != null && grabber.IsHolding;
         bool inPaintMode   = grabber != null && grabber.IsPainting;
         bool canPaint      = !holdingObject || inPaintMode;
 
-        if (canPaint && !_isRotating && _isPainting && Time.time >= _nextPaintTime)
+        bool isShooting = canPaint && !_isRotating && _isPainting;
+
+        if (_paintParticles != null)
+        {
+            var emission = _paintParticles.emission;
+            emission.enabled = isShooting;
+        }
+
+        if (isShooting && Time.time >= _nextPaintTime)
         {
             TryPaint();
             _nextPaintTime = Time.time + paintRate;
         }
     }
 
+    void AimTowardsCrosshair()
+    {
+        bool inPaintMode = grabber != null && grabber.IsPainting;
+        Vector2 screenPoint = inPaintMode
+            ? _pointerPosition
+            : new Vector2(Screen.width / 2f, Screen.height / 2f);
+
+        Ray ray = _cam.ScreenPointToRay(screenPoint);
+        Vector3 targetPoint;
+
+        if (Physics.Raycast(ray, out RaycastHit hit, range))
+        {
+            targetPoint = hit.point;
+        }
+        else
+        {
+            targetPoint = ray.GetPoint(range);
+        }
+
+        if (_gunRenderer != null)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(targetPoint - _gunRenderer.transform.position);
+            _gunRenderer.transform.rotation = Quaternion.Slerp(_gunRenderer.transform.rotation, targetRotation, Time.deltaTime * 15f);
+        }
+
+        if (_paintParticles != null)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(targetPoint - _paintParticles.transform.position);
+            _paintParticles.transform.rotation = Quaternion.Slerp(_paintParticles.transform.rotation, targetRotation, Time.deltaTime * 15f);
+        }
+    }
     void UpdateGunVisual()
     {
         if (_gunRenderer != null && palette != null && palette.colors.Length > 0)
         {
             _gunRenderer.material.color = CurrentColor;
+        }
+
+        if (_paintParticles != null)
+        {
+            var main = _paintParticles.main;
+            main.startColor = CurrentColor;
+        }
+        
+        if (_auraParticles != null)
+        {
+            var auraMain = _auraParticles.main;
+            auraMain.startColor = CurrentColor;
         }
     }
     
