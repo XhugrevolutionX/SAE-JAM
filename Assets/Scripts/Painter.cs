@@ -5,6 +5,7 @@ public class Painter : MonoBehaviour
 {
     [Header("Paint Settings")]
     public ColorPalette palette;
+    public ObjectGrabber grabber;
     public float brushSize = 0.2f;
     public float hardness  = 0.8f;
     public float range     = 10f;
@@ -24,8 +25,16 @@ public class Painter : MonoBehaviour
         HandleColorSwitch();
 
         bool rotating = Mouse.current.rightButton.isPressed;
-        
-        if (!rotating && Mouse.current.leftButton.isPressed && Time.time >= _nextPaintTime)
+
+        // Paint when:
+        // - not rotating
+        // - left click held
+        // - either not holding anything (free aim) OR in paint mode (cursor mode)
+        bool holdingObject = grabber != null && grabber.IsHolding;
+        bool inPaintMode   = grabber != null && grabber.IsPainting;
+        bool canPaint      = !holdingObject || inPaintMode;
+
+        if (canPaint && !rotating && Mouse.current.leftButton.isPressed && Time.time >= _nextPaintTime)
         {
             TryPaint();
             _nextPaintTime = Time.time + paintRate;
@@ -41,8 +50,15 @@ public class Painter : MonoBehaviour
 
     void TryPaint()
     {
-        Vector2 mousePos = Mouse.current.position.ReadValue();
-        Ray ray = _cam.ScreenPointToRay(mousePos);
+        bool inPaintMode = grabber != null && grabber.IsPainting;
+
+        // Paint mode = visible cursor → use mouse position
+        // Free aim = locked cursor → raycast from screen center like a crosshair
+        Vector2 screenPoint = inPaintMode
+            ? Mouse.current.position.ReadValue()
+            : new Vector2(Screen.width / 2f, Screen.height / 2f);
+
+        Ray ray = _cam.ScreenPointToRay(screenPoint);
         if (!Physics.Raycast(ray, out RaycastHit hit, range)) return;
 
         PaintableObject paintable = hit.collider.GetComponent<PaintableObject>();
