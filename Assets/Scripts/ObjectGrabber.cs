@@ -63,20 +63,26 @@ public class ObjectGrabber : MonoBehaviour
         if (rb != null) rb.isKinematic = true;
 
         ExitPaintMode();
+        
+        var cg = _heldTransform.GetComponent<CustomGravity>();
+        if (cg != null) cg.isHeld = true;
 
         Debug.Log($"Grabbed {obj.name} — appuyez sur la touche Paint Mode pour peindre");
     }
 
-    void Drop()
+    public void Drop()
     {
         ExitPaintMode();
 
-        //_heldTransform.position = _originalPosition;
-        //_heldTransform.rotation = _originalRotation;
-        _heldTransform.parent   = _originalParent;
+        _heldTransform.parent = _originalParent;
 
         var rb = _heldTransform.GetComponent<Rigidbody>();
         if (rb != null) rb.isKinematic = false;
+
+        // ── CustomGravity — must be before nulling _heldTransform ──
+        var cg = _heldTransform.GetComponent<CustomGravity>();
+        if (cg != null) cg.isHeld = false;
+        // ───────────────────────────────────────────────────────────
 
         _held          = null;
         _heldTransform = null;
