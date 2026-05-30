@@ -4,24 +4,43 @@ using UnityEngine.InputSystem;
 public class Painter : MonoBehaviour
 {
     [Header("Paint Settings")]
-    public Color paintColor = Color.red;
-    public float brushSize  = 0.2f;
-    public float hardness   = 0.8f;
-    public float range      = 10f;
-    public float paintRate  = 0.005f;
+    public Color[] palette = new Color[]
+    {
+        Color.red,
+        Color.blue,
+        Color.green,
+        Color.yellow,
+    };
 
+    public float brushSize = 0.2f;
+    public float hardness  = 0.8f;
+    public float range     = 10f;
+    public float paintRate = 0.05f;
+
+    private int   _colorIndex    = 0;
     private float _nextPaintTime;
     private Camera _cam;
+
+    public Color CurrentColor => palette[_colorIndex];
 
     void Awake() => _cam = GetComponent<Camera>();
 
     void Update()
     {
+        HandleColorSwitch();
+
         if (Mouse.current.leftButton.isPressed && Time.time >= _nextPaintTime)
         {
             TryPaint();
             _nextPaintTime = Time.time + paintRate;
         }
+    }
+
+    void HandleColorSwitch()
+    {
+        float scroll = Mouse.current.scroll.ReadValue().y;
+        if (scroll > 0) _colorIndex = (_colorIndex + 1) % palette.Length;
+        if (scroll < 0) _colorIndex = (_colorIndex - 1 + palette.Length) % palette.Length;
     }
 
     void TryPaint()
@@ -33,6 +52,6 @@ public class Painter : MonoBehaviour
         PaintableObject paintable = hit.collider.GetComponent<PaintableObject>();
         if (paintable == null) return;
 
-        paintable.Paint(hit.textureCoord, paintColor, brushSize, hardness);
+        paintable.Paint(hit.textureCoord, CurrentColor, brushSize, hardness);
     }
 }
